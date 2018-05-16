@@ -1,0 +1,91 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:uns="http://usersPostsComments.com/users"
+           targetNamespace="http://usersPostsComments.com/users" elementFormDefault="qualified">
+
+    <xs:element name="getAllUsersRequest">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllUsersResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="users" maxOccurs="unbounded" type="uns:user"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getUserByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getUserByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" type="uns:user"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="username" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="createdUser" type="uns:user"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="username" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="updatedUser" type="uns:user"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteUserResponse">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="user">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="username" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
