@@ -1,4 +1,4 @@
-package com.WebServices.SoapService;
+package com.WebServices.PostService;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -32,10 +32,9 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 		wsdl11Definition.setSchema(countriesSchema);
 		return wsdl11Definition;
 	}
-	
+
 	@Bean
 	public XsdSchema countriesSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("countries.xsd"));
 	}
-
 }

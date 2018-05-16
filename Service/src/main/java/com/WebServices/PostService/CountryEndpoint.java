@@ -1,4 +1,4 @@
-package com.WebServices.SoapService;
+package com.WebServices.PostService;
 
 import io.spring.guides.gs_producing_web_servic.GetCountryRequest;
 import io.spring.guides.gs_producing_web_servic.GetCountryResponse;
