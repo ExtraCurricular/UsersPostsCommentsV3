@@ -19,9 +19,9 @@ public class UsersEndpoint {
 	@Autowired
 	UserRepository userRepository;
 
-	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCountryRequest")
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getAllUsersRequest")
 	@ResponsePayload
-	public GetAllUsersResponse getCountry(@RequestPayload GetAllUsersRequest request) {
+	public GetAllUsersResponse getAllUsers(@RequestPayload GetAllUsersRequest request) {
 		GetAllUsersResponse response = new GetAllUsersResponse();
 
 		List<User> users = userRepository.findAll();
