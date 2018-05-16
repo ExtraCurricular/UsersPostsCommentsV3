@@ -23,7 +23,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 		return new ServletRegistrationBean(servlet, "/soap/*");
 	}
 
-	@Bean(name = "countries")
+	@Bean(name = "users")
 	public DefaultWsdl11Definition defaultWsdl11DefinitionUsers(XsdSchema usersSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
 		wsdl11Definition.setPortTypeName("UsersPort");
