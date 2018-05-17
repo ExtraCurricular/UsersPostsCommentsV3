@@ -91,7 +91,7 @@ public class PostsEndpoint {
         if (post.getWeatherId() != 0) {
             RestTemplate restTemplate = new RestTemplate();
             ResponseEntity<Location> forecastResponse =
-                    restTemplate.exchange("http://userspostscommentsv2_WeatherService_1:5000/locations/" + post.getWeatherId(),
+                    restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations/" + post.getWeatherId(),
                             HttpMethod.GET, null, new ParameterizedTypeReference<Location>() {
                             });
             if (forecastResponse.getStatusCode() == HttpStatus.OK) {
@@ -164,7 +164,7 @@ public class PostsEndpoint {
             }
 
             HttpEntity<String> WeatherRequest = new HttpEntity<>(json);
-            ResponseEntity<String> postResponse = restTemplate.exchange("http://userspostscommentsv2_WeatherService_1:5000/locations",
+            ResponseEntity<String> postResponse = restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations",
                     HttpMethod.POST, WeatherRequest, String.class);
 
             if (postResponse.getStatusCode() == HttpStatus.CREATED) {
@@ -224,7 +224,7 @@ public class PostsEndpoint {
             if(post.getWeatherId() != 0){
                 RestTemplate restTemplate = new RestTemplate();
                 ResponseEntity<String> deleteResponse =
-                        restTemplate.exchange("http://userspostscommentsv2_WeatherService_1:5000/locations/" + post.getWeatherId(),
+                        restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations/" + post.getWeatherId(),
                                 HttpMethod.DELETE, null, new ParameterizedTypeReference<String>() {
                                 });
                 if(deleteResponse.getStatusCode() != HttpStatus.OK){
@@ -251,7 +251,7 @@ public class PostsEndpoint {
             }
 
             HttpEntity<String> WeatherRequest = new HttpEntity<>(json);
-            ResponseEntity<String> postResponse = restTemplate.exchange("http://userspostscommentsv2_WeatherService_1:5000/locations",
+            ResponseEntity<String> postResponse = restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations",
                     HttpMethod.POST, WeatherRequest, String.class);
 
             if (postResponse.getStatusCode() == HttpStatus.CREATED) {
@@ -289,7 +289,7 @@ public class PostsEndpoint {
         if (post.getWeatherId() != 0) {
             RestTemplate restTemplate = new RestTemplate();
             ResponseEntity<String> deleteResponse =
-                    restTemplate.exchange("http://userspostscommentsv2_WeatherService_1:5000/locations/" + post.getWeatherId(),
+                    restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations/" + post.getWeatherId(),
                             HttpMethod.DELETE, null, new ParameterizedTypeReference<String>() {
                             });
             if(deleteResponse.getStatusCode() != HttpStatus.OK){
