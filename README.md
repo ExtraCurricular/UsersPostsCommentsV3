@@ -1,182 +1,181 @@
 ~~~~
-
 <ip>(port 80)/soap
   
-##############################################################
-Users:</br>
+############################################################################################################################
+Users:
 
-Create:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:user="http://usersPostsComments.com/users"></br>
-  <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <user:createUserRequest></br>
-         <user:email>?</user:email></br>
-         <user:username>?</user:username></br>
-      </user:createUserRequest></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Create:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://usersPostsComments.com/users">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:createUserRequest>
+         <user:email>?</user:email>
+         <user:username>?</user:username>
+      </user:createUserRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 
-Get all:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:user="http://usersPostsComments.com/users"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <user:getAllUsersRequest/></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Get all:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://usersPostsComments.com/users">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:getAllUsersRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>
 
-Get by id:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:user="http://usersPostsComments.com/users"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <user:getUserByIdRequest></br>
-         <user:id>?</user:id></br>
-      </user:getUserByIdRequest></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Get by id:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://usersPostsComments.com/users">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:getUserByIdRequest>
+         <user:id>?</user:id>
+      </user:getUserByIdRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 
 Update:
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:user="http://usersPostsComments.com/users"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <user:updateUserRequest></br>
-         <user:id>?</user:id></br>
-         <user:email>?</user:email></br>
-         <user:username>?</user:username></br>
-      </user:updateUserRequest></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://usersPostsComments.com/users">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:updateUserRequest>
+         <user:id>?</user:id>
+         <user:email>?</user:email>
+         <user:username>?</user:username>
+      </user:updateUserRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 
 Delete:
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:user="http://usersPostsComments.com/users"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <user:deleteUserRequest></br>
-         <user:id>?</user:id></br>
-      </user:deleteUserRequest></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:user="http://usersPostsComments.com/users">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:deleteUserRequest>
+         <user:id>?</user:id>
+      </user:deleteUserRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 
-####################################################################################
-Posts:</br>
+############################################################################################################################
+Posts:
 
-Create:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:pos="http://usersPostsComments.com/posts"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <pos:createPostRequest></br>
-         <pos:userId>?</pos:userId></br>
-         <pos:title>?</pos:title></br>
-         <pos:body>?</pos:body></br>
-         <!--Optional:--></br>
-         <pos:location></br>
-            <pos:city>?</pos:city></br>
-            <pos:date>?</pos:date></br>
-            <pos:temperature>?</pos:temperature></br>
-         </pos:location></br>
-      </pos:createPostRequest></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Create:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pos="http://usersPostsComments.com/posts">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pos:createPostRequest>
+         <pos:userId>?</pos:userId>
+         <pos:title>?</pos:title>
+         <pos:body>?</pos:body>
+         <!--Optional:-->
+         <pos:location>
+            <pos:city>?</pos:city>
+            <pos:date>?</pos:date>
+            <pos:temperature>?</pos:temperature>
+         </pos:location>
+      </pos:createPostRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 
-Get all:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:pos="http://usersPostsComments.com/posts"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <pos:getAllPostsRequest/></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Get all:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pos="http://usersPostsComments.com/posts">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pos:getAllPostsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>
 
-Get by id:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:pos="http://usersPostsComments.com/posts"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <pos:getPostByIdRequest></br>
-         <pos:id>?</pos:id></br>
-      </pos:getPostByIdRequest></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Get by id:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pos="http://usersPostsComments.com/posts">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pos:getPostByIdRequest>
+         <pos:id>?</pos:id>
+      </pos:getPostByIdRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 
-Update:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:pos="http://usersPostsComments.com/posts"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <pos:updatePostRequest></br>
-         <pos:id>?</pos:id></br>
-         <pos:userId>?</pos:userId></br>
-         <pos:title>?</pos:title></br>
-         <pos:body>?</pos:body></br>
-         <!--Optional:--></br>
-         <pos:location></br>
-            <pos:city>?</pos:city></br>
-            <pos:date>?</pos:date></br>
-            <pos:temperature>?</pos:temperature></br>
-         </pos:location></br>
-      </pos:updatePostRequest></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Update:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pos="http://usersPostsComments.com/posts">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pos:updatePostRequest>
+         <pos:id>?</pos:id>
+         <pos:userId>?</pos:userId>
+         <pos:title>?</pos:title>
+         <pos:body>?</pos:body>
+         <!--Optional:-->
+         <pos:location>
+            <pos:city>?</pos:city>
+            <pos:date>?</pos:date>
+            <pos:temperature>?</pos:temperature>
+         </pos:location>
+      </pos:updatePostRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 
-Delete:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:pos="http://usersPostsComments.com/posts"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <pos:deletePostRequest></br>
-         <pos:id>?</pos:id></br>
-      </pos:deletePostRequest></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Delete:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pos="http://usersPostsComments.com/posts">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pos:deletePostRequest>
+         <pos:id>?</pos:id>
+      </pos:deletePostRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 
-##############################################################################
-Comments:</br>
+############################################################################################################################
+Comments:
 
-Create:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:com="http://usersPostsComments.com/comments"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <com:createCommentRequest></br>
-         <com:userId>?</com:userId></br>
-         <com:postId>?</com:postId></br>
-         <com:body>?</com:body></br>
-      </com:createCommentRequest></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Create:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://usersPostsComments.com/comments">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:createCommentRequest>
+         <com:userId>?</com:userId>
+         <com:postId>?</com:postId>
+         <com:body>?</com:body>
+      </com:createCommentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 
-Get all:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:com="http://usersPostsComments.com/comments"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <com:getAllCommentsRequest/></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Get all:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://usersPostsComments.com/comments">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:getAllCommentsRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>
 
-Get by id:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:com="http://usersPostsComments.com/comments"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <com:getCommentByIdRequest></br>
-         <com:id>?</com:id></br>
-      </com:getCommentByIdRequest></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Get by id:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://usersPostsComments.com/comments">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:getCommentByIdRequest>
+         <com:id>?</com:id>
+      </com:getCommentByIdRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 
-Update:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:com="http://usersPostsComments.com/comments"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <com:updateCommentRequest></br>
-         <com:id>?</com:id></br>
-         <com:userId>?</com:userId></br>
-         <com:postId>?</com:postId></br>
-         <com:body>?</com:body></br>
-      </com:updateCommentRequest></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Update:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://usersPostsComments.com/comments">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:updateCommentRequest>
+         <com:id>?</com:id>
+         <com:userId>?</com:userId>
+         <com:postId>?</com:postId>
+         <com:body>?</com:body>
+      </com:updateCommentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 
-Delete:</br>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"</br> xmlns:com="http://usersPostsComments.com/comments"></br>
-   <soapenv:Header/></br>
-   <soapenv:Body></br>
-      <com:deleteCommentRequest></br>
-         <com:id>?</com:id></br>
-      </com:deleteCommentRequest></br>
-   </soapenv:Body></br>
-</soapenv:Envelope></br>
+Delete:
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://usersPostsComments.com/comments">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:deleteCommentRequest>
+         <com:id>?</com:id>
+      </com:deleteCommentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 ~~~~
