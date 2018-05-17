@@ -108,11 +108,11 @@ public class UsersEndpoint {
             throw new ServiceFaultException("ERROR", new ServiceFault("CONFLICT", "A user with username: " + request.getUsername() + " already exists."));
         }
 
-        if(user.getEmail() != null){
+        if(request.getEmail() != null){
             user.setEmail(request.getEmail());
         }
 
-        if(user.getUsername() != null){
+        if(request.getUsername() != null){
             user.setUsername(request.getUsername());
         }
 
