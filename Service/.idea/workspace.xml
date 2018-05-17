@@ -65,11 +65,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostsEndpoint.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostsEndpoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/PostsEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-4846">
               <caret line="41" column="52" lean-forward="false" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Post.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/models/Post.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -255,6 +265,17 @@
               <item name="WebServices" type="462c0819:PsiDirectoryNode" />
               <item name="PostService" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="WebServices" type="462c0819:PsiDirectoryNode" />
+              <item name="PostService" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Service" type="b2602c69:ProjectViewProjectNode" />
@@ -552,13 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/models/Post.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/countries.xsd" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/SoapService/CountryEndpoint.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/SoapService/CountryRepository.java" />
@@ -844,6 +858,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4846">
           <caret line="41" column="52" lean-forward="false" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/models/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="26" />
           <folding />
         </state>
       </provider>
