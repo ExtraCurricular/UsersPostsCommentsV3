@@ -4,10 +4,7 @@ import com.WebServices.PostService.ServiceFault.ServiceFault;
 import com.WebServices.PostService.ServiceFault.ServiceFaultException;
 import com.WebServices.PostService.models.User;
 import com.WebServices.PostService.repositories.UserRepository;
-import com.userspostscomments.users.GetAllUsersRequest;
-import com.userspostscomments.users.GetAllUsersResponse;
-import com.userspostscomments.users.GetUserByIdRequest;
-import com.userspostscomments.users.GetUserByIdResponse;
+import com.userspostscomments.users.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -46,7 +43,7 @@ public class UsersEndpoint {
 		GetUserByIdResponse response = new GetUserByIdResponse();
 
         User user =  userRepository.findById((long)request.getId()).orElseThrow(() ->
-                new ServiceFaultException("ERROR", new ServiceFault("NOT_FOUND", "A ser with id: " + request.getId() + " was not found.")));
+                new ServiceFaultException("ERROR", new ServiceFault("NOT_FOUND", "A user with id: " + request.getId() + " was not found.")));
 
         com.userspostscomments.users.User userDTO = new com.userspostscomments.users.User();
         userDTO.setId((int)user.getId());
@@ -57,4 +54,57 @@ public class UsersEndpoint {
 
 		return response;
 	}
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createUserRequest")
+    @ResponsePayload
+    public CreateUserResponse createUser(@RequestPayload CreateUserRequest request) {
+        CreateUserResponse response = new CreateUserResponse();
+
+        /* if (user.getEmail() == null || user.getUsername() == null) {
+            throw new Exception406();
+        }*/
+
+        if ((userRepository.findByEmail(request.getEmail())).size() != 0){
+            throw new ServiceFaultException("ERROR", new ServiceFault("CONFLICT", "A user with email: " + request.getEmail() + " already exists."));
+        }
+
+        if((userRepository.findByUsername(request.getUsername())).size() != 0){
+            throw new ServiceFaultException("ERROR", new ServiceFault("CONFLICT", "A user with username: " + request.getUsername() + " already exists."));
+        }
+
+        User user = new User();
+        user.setEmail(request.getEmail());
+        user.setUsername(request.getUsername());
+
+        User userNew = userRepository.save(user);
+
+        com.userspostscomments.users.User userDTO = new com.userspostscomments.users.User();
+        userDTO.setId((int)userNew.getId());
+        userDTO.setUsername(userNew.getUsername());
+        userDTO.setEmail(userNew.getEmail());
+
+        response.setCreatedUser(userDTO);
+
+        return response;
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "updateUserRequest")
+    @ResponsePayload
+    public UpdateUserResponse updateUser(@RequestPayload UpdateUserRequest request) {
+        UpdateUserResponse response = new UpdateUserResponse();
+
+
+
+        return response;
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "deleteUserRequest")
+    @ResponsePayload
+    public DeleteUserResponse deleteUser(@RequestPayload DeleteUserRequest request) {
+        DeleteUserResponse response = new DeleteUserResponse();
+
+
+
+        return response;
+    }
 }
