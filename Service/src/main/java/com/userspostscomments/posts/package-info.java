@@ -5,5 +5,5 @@
 // Generated on: 2018.05.17 at 03:45:13 PM EEST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://usersPostsComments.com/users", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.userspostscomments.users;
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://usersPostsComments.com/posts", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package com.userspostscomments.posts;

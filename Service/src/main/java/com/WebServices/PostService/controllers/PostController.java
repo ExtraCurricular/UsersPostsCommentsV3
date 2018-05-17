@@ -132,8 +132,6 @@ public class PostController {
             postNew.setTitle(post.getTitle());
             postNew.setUserId(post.getUserId());
 
-            System.out.println("55555555555555555555555555555555555555555555555555555555555555555555555555555555555555");
-
             response.setStatus(201);
             Post postNewest = postRepository.save(postNew);
             response.addHeader("Location", "api/posts/" + postNewest.getId());

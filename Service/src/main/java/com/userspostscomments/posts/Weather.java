@@ -6,27 +6,27 @@
 //
 
 
-package com.userspostscomments.users;
+package com.userspostscomments.posts;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for weather complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
+ * &lt;complexType name="weather">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="temperature" type="{http://www.w3.org/2001/XMLSchema}float"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,64 +36,81 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "email",
-    "username"
+@XmlType(name = "weather", propOrder = {
+    "city",
+    "date",
+    "temperature"
 })
-@XmlRootElement(name = "createUserRequest")
-public class CreateUserRequest {
+public class Weather {
 
     @XmlElement(required = true)
-    protected String email;
+    protected String city;
     @XmlElement(required = true)
-    protected String username;
+    protected String date;
+    protected float temperature;
 
     /**
-     * Gets the value of the email property.
+     * Gets the value of the city property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getEmail() {
-        return email;
+    public String getCity() {
+        return city;
     }
 
     /**
-     * Sets the value of the email property.
+     * Sets the value of the city property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setEmail(String value) {
-        this.email = value;
+    public void setCity(String value) {
+        this.city = value;
     }
 
     /**
-     * Gets the value of the username property.
+     * Gets the value of the date property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getUsername() {
-        return username;
+    public String getDate() {
+        return date;
     }
 
     /**
-     * Sets the value of the username property.
+     * Sets the value of the date property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setUsername(String value) {
-        this.username = value;
+    public void setDate(String value) {
+        this.date = value;
+    }
+
+    /**
+     * Gets the value of the temperature property.
+     * 
+     */
+    public float getTemperature() {
+        return temperature;
+    }
+
+    /**
+     * Sets the value of the temperature property.
+     * 
+     */
+    public void setTemperature(float value) {
+        this.temperature = value;
     }
 
 }

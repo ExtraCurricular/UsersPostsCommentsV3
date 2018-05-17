@@ -6,10 +6,11 @@
 //
 
 
-package com.userspostscomments.users;
+package com.userspostscomments.posts;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="createdPost" type="{http://usersPostsComments.com/posts}post"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,27 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id"
+    "createdPost"
 })
-@XmlRootElement(name = "deleteUserRequest")
-public class DeleteUserRequest {
+@XmlRootElement(name = "createPostResponse")
+public class CreatePostResponse {
 
-    protected int id;
+    @XmlElement(required = true)
+    protected Post createdPost;
 
     /**
-     * Gets the value of the id property.
+     * Gets the value of the createdPost property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Post }
+     *     
      */
-    public int getId() {
-        return id;
+    public Post getCreatedPost() {
+        return createdPost;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the value of the createdPost property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Post }
+     *     
      */
-    public void setId(int value) {
-        this.id = value;
+    public void setCreatedPost(Post value) {
+        this.createdPost = value;
     }
 
 }

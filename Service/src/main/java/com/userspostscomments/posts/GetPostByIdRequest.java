@@ -6,7 +6,7 @@
 //
 
 
-package com.userspostscomments.users;
+package com.userspostscomments.posts;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "id"
 })
-@XmlRootElement(name = "deleteUserRequest")
-public class DeleteUserRequest {
+@XmlRootElement(name = "getPostByIdRequest")
+public class GetPostByIdRequest {
 
     protected int id;
 

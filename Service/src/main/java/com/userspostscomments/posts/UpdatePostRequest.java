@@ -6,7 +6,7 @@
 //
 
 
-package com.userspostscomments.users;
+package com.userspostscomments.posts;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -26,8 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="body" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="location" type="{http://usersPostsComments.com/posts}weather" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -39,17 +41,21 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "id",
-    "email",
-    "username"
+    "userId",
+    "title",
+    "body",
+    "location"
 })
-@XmlRootElement(name = "updateUserRequest")
-public class UpdateUserRequest {
+@XmlRootElement(name = "updatePostRequest")
+public class UpdatePostRequest {
 
     protected int id;
+    protected int userId;
     @XmlElement(required = true)
-    protected String email;
+    protected String title;
     @XmlElement(required = true)
-    protected String username;
+    protected String body;
+    protected Weather location;
 
     /**
      * Gets the value of the id property.
@@ -68,51 +74,91 @@ public class UpdateUserRequest {
     }
 
     /**
-     * Gets the value of the email property.
+     * Gets the value of the userId property.
+     * 
+     */
+    public int getUserId() {
+        return userId;
+    }
+
+    /**
+     * Sets the value of the userId property.
+     * 
+     */
+    public void setUserId(int value) {
+        this.userId = value;
+    }
+
+    /**
+     * Gets the value of the title property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getEmail() {
-        return email;
+    public String getTitle() {
+        return title;
     }
 
     /**
-     * Sets the value of the email property.
+     * Sets the value of the title property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setEmail(String value) {
-        this.email = value;
+    public void setTitle(String value) {
+        this.title = value;
     }
 
     /**
-     * Gets the value of the username property.
+     * Gets the value of the body property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getUsername() {
-        return username;
+    public String getBody() {
+        return body;
     }
 
     /**
-     * Sets the value of the username property.
+     * Sets the value of the body property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setUsername(String value) {
-        this.username = value;
+    public void setBody(String value) {
+        this.body = value;
+    }
+
+    /**
+     * Gets the value of the location property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Weather }
+     *     
+     */
+    public Weather getLocation() {
+        return location;
+    }
+
+    /**
+     * Sets the value of the location property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Weather }
+     *     
+     */
+    public void setLocation(Weather value) {
+        this.location = value;
     }
 
 }

@@ -6,8 +6,10 @@
 //
 
 
-package com.userspostscomments.users;
+package com.userspostscomments.posts;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -25,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="createdUser" type="{http://usersPostsComments.com/users}user"/>
+ *         &lt;element name="posts" type="{http://usersPostsComments.com/posts}post" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +38,41 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "createdUser"
+    "posts"
 })
-@XmlRootElement(name = "createUserResponse")
-public class CreateUserResponse {
+@XmlRootElement(name = "getAllPostsResponse")
+public class GetAllPostsResponse {
 
     @XmlElement(required = true)
-    protected User createdUser;
+    protected List<Post> posts;
 
     /**
-     * Gets the value of the createdUser property.
+     * Gets the value of the posts property.
      * 
-     * @return
-     *     possible object is
-     *     {@link User }
-     *     
-     */
-    public User getCreatedUser() {
-        return createdUser;
-    }
-
-    /**
-     * Sets the value of the createdUser property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the posts property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link User }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPosts().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Post }
+     * 
+     * 
      */
-    public void setCreatedUser(User value) {
-        this.createdUser = value;
+    public List<Post> getPosts() {
+        if (posts == null) {
+            posts = new ArrayList<Post>();
+        }
+        return this.posts;
     }
 
 }
