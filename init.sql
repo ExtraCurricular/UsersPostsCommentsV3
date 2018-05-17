@@ -28,8 +28,8 @@ weather_id BIGINT(20)
 
 INSERT INTO posts (id, user_id, title, body, weather_id ) VALUES (1, 1, "first title", "first post", 1);
 INSERT INTO posts (id, user_id, title, body, weather_id ) VALUES (2, 2, "second title", "second post", 2);
-INSERT INTO posts (id, user_id, title, body, weather_id ) VALUES (3, 3, "third title", "third post", 2);
-INSERT INTO posts (id, user_id, title, body, weather_id ) VALUES (4, 3, "fourth title", "fourth post", 1);
+INSERT INTO posts (id, user_id, title, body, weather_id ) VALUES (3, 3, "third title", "third post", 3);
+INSERT INTO posts (id, user_id, title, body, weather_id ) VALUES (4, 3, "fourth title", "fourth post");
 
 CREATE TABLE comments (
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,

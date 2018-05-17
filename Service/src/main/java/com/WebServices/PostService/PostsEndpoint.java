@@ -40,7 +40,6 @@ public class PostsEndpoint {
         GetAllPostsResponse response = new GetAllPostsResponse();
 
         List<Post> posts = postRepository.findAll();
-        List<com.userspostscomments.posts.Post> responsePosts = new ArrayList<>();
 
         RestTemplate restTemplate = new RestTemplate();
 
