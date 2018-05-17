@@ -47,7 +47,7 @@ public class PostsEndpoint {
         for (Post post : posts) {
             if (post.getWeatherId() != 0) {
                 ResponseEntity<Location> forecastResponse =
-                        restTemplate.exchange("http://userspostscommentsv2_WeatherService_1:5000/locations/" + post.getWeatherId(),
+                        restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations/" + post.getWeatherId(),
                                 HttpMethod.GET, null, new ParameterizedTypeReference<Location>() {
                                 });
                 if (forecastResponse.getStatusCode() == HttpStatus.OK) {
