@@ -6,7 +6,7 @@
 //
 
 
-package com.userspostscomments.users;
+package com.userspostscomments.comments;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,8 +25,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="postId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="body" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,63 +38,72 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "email",
-    "username"
+    "userId",
+    "postId",
+    "body"
 })
-@XmlRootElement(name = "createUserRequest")
-public class CreateUserRequest {
+@XmlRootElement(name = "createCommentRequest")
+public class CreateCommentRequest {
 
+    protected int userId;
+    protected int postId;
     @XmlElement(required = true)
-    protected String email;
-    @XmlElement(required = true)
-    protected String username;
+    protected String body;
 
     /**
-     * Gets the value of the email property.
+     * Gets the value of the userId property.
+     * 
+     */
+    public int getUserId() {
+        return userId;
+    }
+
+    /**
+     * Sets the value of the userId property.
+     * 
+     */
+    public void setUserId(int value) {
+        this.userId = value;
+    }
+
+    /**
+     * Gets the value of the postId property.
+     * 
+     */
+    public int getPostId() {
+        return postId;
+    }
+
+    /**
+     * Sets the value of the postId property.
+     * 
+     */
+    public void setPostId(int value) {
+        this.postId = value;
+    }
+
+    /**
+     * Gets the value of the body property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getEmail() {
-        return email;
+    public String getBody() {
+        return body;
     }
 
     /**
-     * Sets the value of the email property.
+     * Sets the value of the body property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setEmail(String value) {
-        this.email = value;
-    }
-
-    /**
-     * Gets the value of the username property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getUsername() {
-        return username;
-    }
-
-    /**
-     * Sets the value of the username property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUsername(String value) {
-        this.username = value;
+    public void setBody(String value) {
+        this.body = value;
     }
 
 }

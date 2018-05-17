@@ -66,6 +66,16 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         return wsdl11Definition;
     }
 
+	@Bean(name = "comments")
+	public DefaultWsdl11Definition defaultWsdl11DefinitionComments(XsdSchema commentsSchema) {
+		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+		wsdl11Definition.setPortTypeName("CommentsPort");
+		wsdl11Definition.setLocationUri("/soap");
+		wsdl11Definition.setTargetNamespace("http://usersPostsComments.com/comments");
+		wsdl11Definition.setSchema(commentsSchema);
+		return wsdl11Definition;
+	}
+
 	@Bean
 	public XsdSchema usersSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("users.xsd"));
@@ -74,5 +84,10 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 	@Bean
 	public XsdSchema postsSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("posts.xsd"));
+	}
+
+	@Bean
+	public XsdSchema commentsSchema() {
+		return new SimpleXsdSchema(new ClassPathResource("comments.xsd"));
 	}
 }

@@ -6,10 +6,11 @@
 //
 
 
-package com.userspostscomments.users;
+package com.userspostscomments.comments;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="comment" type="{http://usersPostsComments.com/comments}comment"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,27 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id"
+    "comment"
 })
-@XmlRootElement(name = "deleteUserRequest")
-public class DeleteUserRequest {
+@XmlRootElement(name = "getCommentByIdResponse")
+public class GetCommentByIdResponse {
 
-    protected int id;
+    @XmlElement(required = true)
+    protected Comment comment;
 
     /**
-     * Gets the value of the id property.
+     * Gets the value of the comment property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Comment }
+     *     
      */
-    public int getId() {
-        return id;
+    public Comment getComment() {
+        return comment;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the value of the comment property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Comment }
+     *     
      */
-    public void setId(int value) {
-        this.id = value;
+    public void setComment(Comment value) {
+        this.comment = value;
     }
 
 }

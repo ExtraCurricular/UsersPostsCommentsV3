@@ -36,7 +36,7 @@ public class PostsEndpoint {
 
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getAllPostsRequest")
 	@ResponsePayload
-	public GetAllPostsResponse getAllUsers(@RequestPayload GetAllPostsRequest request) {
+	public GetAllPostsResponse getAllPosts(@RequestPayload GetAllPostsRequest request) {
         GetAllPostsResponse response = new GetAllPostsResponse();
 
         List<Post> posts = postRepository.findAll();
@@ -81,7 +81,7 @@ public class PostsEndpoint {
 
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getPostByIdRequest")
 	@ResponsePayload
-	public GetPostByIdResponse getUserById(@RequestPayload GetPostByIdRequest request) {
+	public GetPostByIdResponse getPostById(@RequestPayload GetPostByIdRequest request) {
         GetPostByIdResponse response = new GetPostByIdResponse();
 
         Post post = postRepository.findById((long)request.getId()).orElseThrow(() ->
@@ -126,7 +126,7 @@ public class PostsEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createPostRequest")
     @ResponsePayload
-    public CreatePostResponse createUser(@RequestPayload CreatePostRequest request) {
+    public CreatePostResponse createPost(@RequestPayload CreatePostRequest request) {
         CreatePostResponse response = new CreatePostResponse();
 
         if (request.getUserId() == 0) {
@@ -200,7 +200,7 @@ public class PostsEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "updatePostRequest")
     @ResponsePayload
-    public UpdatePostResponse updateUser(@RequestPayload UpdatePostRequest request) {
+    public UpdatePostResponse updatePost(@RequestPayload UpdatePostRequest request) {
         UpdatePostResponse response = new UpdatePostResponse();
 
         Post post =  postRepository.findById((long)request.getId()).orElseThrow(() ->
@@ -281,7 +281,7 @@ public class PostsEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "deletePostRequest")
     @ResponsePayload
-    public DeletePostResponse deleteUser(@RequestPayload DeletePostRequest request) {
+    public DeletePostResponse deletePost(@RequestPayload DeletePostRequest request) {
         DeletePostResponse response = new DeletePostResponse();
 
         Post post = postRepository.findById((long)request.getId()).orElseThrow(() ->

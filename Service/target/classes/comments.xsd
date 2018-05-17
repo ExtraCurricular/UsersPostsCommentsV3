@@ -1,0 +1,94 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cns="http://usersPostsComments.com/comments"
+           targetNamespace="http://usersPostsComments.com/comments" elementFormDefault="qualified">
+
+    <xs:element name="getAllCommentsRequest">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllCommentsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="comments" maxOccurs="unbounded" type="cns:comment"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCommentByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCommentByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="comment" type="cns:comment"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createCommentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userId" type="xs:int"/>
+                <xs:element name="postId" type="xs:int"/>
+                <xs:element name="body" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createCommentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="createdComment" type="cns:comment"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateCommentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+                <xs:element name="userId" type="xs:int"/>
+                <xs:element name="postId" type="xs:int"/>
+                <xs:element name="body" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateCommentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="updatedComment" type="cns:comment"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteCommentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteCommentResponse">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="comment">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="userId" type="xs:int"/>
+            <xs:element name="postId" type="xs:int"/>
+            <xs:element name="body" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
