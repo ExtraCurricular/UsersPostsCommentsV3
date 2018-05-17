@@ -60,9 +60,13 @@ public class UsersEndpoint {
     public CreateUserResponse createUser(@RequestPayload CreateUserRequest request) {
         CreateUserResponse response = new CreateUserResponse();
 
-        /* if (user.getEmail() == null || user.getUsername() == null) {
-            throw new Exception406();
-        }*/
+        if (request.getEmail() == null){
+            throw new ServiceFaultException("ERROR", new ServiceFault("BAD_REQUEST", "Please, specify the email"));
+        }
+
+        if(request.getUsername() == null){
+            throw new ServiceFaultException("ERROR", new ServiceFault("BAD_REQUEST", "Please, specify the username"));
+        }
 
         if ((userRepository.findByEmail(request.getEmail())).size() != 0){
             throw new ServiceFaultException("ERROR", new ServiceFault("CONFLICT", "A user with email: " + request.getEmail() + " already exists."));
@@ -93,7 +97,28 @@ public class UsersEndpoint {
     public UpdateUserResponse updateUser(@RequestPayload UpdateUserRequest request) {
         UpdateUserResponse response = new UpdateUserResponse();
 
+        User user =  userRepository.findById((long)request.getId()).orElseThrow(() ->
+                new ServiceFaultException("ERROR", new ServiceFault("NOT_FOUND", "A user with id: " + request.getId() + " was not found.")));
 
+        if (request.getEmail() != null && (userRepository.findByEmail(request.getEmail())).size() != 0){
+            throw new ServiceFaultException("ERROR", new ServiceFault("CONFLICT", "A user with email: " + request.getEmail() + " already exists."));
+        }
+
+        if(request.getUsername() != null && (userRepository.findByUsername(request.getUsername())).size() != 0){
+            throw new ServiceFaultException("ERROR", new ServiceFault("CONFLICT", "A user with username: " + request.getUsername() + " already exists."));
+        }
+
+        user.setEmail(request.getEmail());
+        user.setUsername(request.getUsername());
+
+        userRepository.save(user);
+
+        com.userspostscomments.users.User userDTO = new com.userspostscomments.users.User();
+        userDTO.setId((int)user.getId());
+        userDTO.setUsername(user.getUsername());
+        userDTO.setEmail(user.getEmail());
+
+        response.setUpdatedUser(userDTO);
 
         return response;
     }
@@ -103,7 +128,8 @@ public class UsersEndpoint {
     public DeleteUserResponse deleteUser(@RequestPayload DeleteUserRequest request) {
         DeleteUserResponse response = new DeleteUserResponse();
 
-
+        userRepository.findById((long)request.getId()).orElseThrow(() ->
+                new ServiceFaultException("ERROR", new ServiceFault("NOT_FOUND", "A user with id: " + request.getId() + " was not found.")));
 
         return response;
     }
