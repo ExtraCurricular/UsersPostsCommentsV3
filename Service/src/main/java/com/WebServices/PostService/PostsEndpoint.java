@@ -192,6 +192,7 @@ public class PostsEndpoint {
         postDTO.setBody(postNewest.getBody());
         postDTO.setTitle(postNewest.getTitle());
         postDTO.setId((int)postNewest.getId());
+        postDTO.setLocationId((int)postNewest.getWeatherId());
         response.setCreatedPost(postDTO);
 
         return response;
@@ -272,6 +273,7 @@ public class PostsEndpoint {
         postDTO.setBody(postNewest.getBody());
         postDTO.setTitle(postNewest.getTitle());
         postDTO.setId((int)postNewest.getId());
+        postDTO.setLocationId((int)postNewest.getWeatherId());
         response.setUpdatedPost(postDTO);
 
         return response;
