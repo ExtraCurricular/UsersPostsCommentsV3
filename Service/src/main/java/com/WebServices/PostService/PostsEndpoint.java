@@ -157,7 +157,7 @@ public class PostsEndpoint {
 
             String json = "";
             try {
-                ow.writeValueAsString(request.getLocation());
+                json = ow.writeValueAsString(request.getLocation());
             } catch (Exception ex){
                 throw new ServiceFaultException("ERROR", new ServiceFault("BAD_REQUEST", "Please, submit only correct location data"));
             }
@@ -244,7 +244,7 @@ public class PostsEndpoint {
 
             String json = "";
             try {
-                ow.writeValueAsString(request.getLocation());
+                json = ow.writeValueAsString(request.getLocation());
             } catch (Exception ex){
                 throw new ServiceFaultException("ERROR", new ServiceFault("BAD_REQUEST", "Please, submit only correct location data"));
             }
