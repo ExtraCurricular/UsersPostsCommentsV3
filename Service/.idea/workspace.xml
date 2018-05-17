@@ -25,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommentsEndpoint.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CommentsEndpoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/CommentsEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
@@ -40,6 +40,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
               <caret line="28" column="41" lean-forward="false" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="97" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -123,11 +133,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/WebServices/PostService/controllers/PostController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/users.xsd" />
         <option value="$PROJECT_DIR$/src/main/resources/posts.xsd" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/WebServices/PostService/WebServiceConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/comments.xsd" />
         <option value="$PROJECT_DIR$/src/main/java/com/WebServices/PostService/PostsEndpoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/WebServices/PostService/CommentsEndpoint.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -789,14 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="94" column="21" lean-forward="false" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/comments.xsd">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -809,6 +811,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="97" selection-end-column="21" />
           <folding />
         </state>
       </provider>
