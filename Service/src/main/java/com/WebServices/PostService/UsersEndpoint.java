@@ -108,8 +108,13 @@ public class UsersEndpoint {
             throw new ServiceFaultException("ERROR", new ServiceFault("CONFLICT", "A user with username: " + request.getUsername() + " already exists."));
         }
 
-        user.setEmail(request.getEmail());
-        user.setUsername(request.getUsername());
+        if(user.getEmail() != null){
+            user.setEmail(request.getEmail());
+        }
+
+        if(user.getUsername() != null){
+            user.setUsername(request.getUsername());
+        }
 
         userRepository.save(user);
 
@@ -128,8 +133,10 @@ public class UsersEndpoint {
     public DeleteUserResponse deleteUser(@RequestPayload DeleteUserRequest request) {
         DeleteUserResponse response = new DeleteUserResponse();
 
-        userRepository.findById((long)request.getId()).orElseThrow(() ->
+        User user = userRepository.findById((long)request.getId()).orElseThrow(() ->
                 new ServiceFaultException("ERROR", new ServiceFault("NOT_FOUND", "A user with id: " + request.getId() + " was not found.")));
+
+        userRepository.delete(user);
 
         return response;
     }
