@@ -1,9 +1,13 @@
 package com.WebServices.PostService;
 
+import com.WebServices.PostService.ServiceFault.ServiceFault;
+import com.WebServices.PostService.ServiceFault.ServiceFaultException;
 import com.WebServices.PostService.models.User;
 import com.WebServices.PostService.repositories.UserRepository;
 import com.userspostscomments.users.GetAllUsersRequest;
 import com.userspostscomments.users.GetAllUsersResponse;
+import com.userspostscomments.users.GetUserByIdRequest;
+import com.userspostscomments.users.GetUserByIdResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -32,6 +36,24 @@ public class UsersEndpoint {
 			userDto.setUsername(user.getUsername());
 			response.getUsers().add(userDto);
 		}
+
+		return response;
+	}
+
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getUserByIdRequest")
+	@ResponsePayload
+	public GetUserByIdResponse getUserById(@RequestPayload GetUserByIdRequest request) {
+		GetUserByIdResponse response = new GetUserByIdResponse();
+
+        User user =  userRepository.findById((long)request.getId()).orElseThrow(() ->
+                new ServiceFaultException("ERROR", new ServiceFault("NOT_FOUND", "A ser with id: " + request.getId() + " was not found.")));
+
+        com.userspostscomments.users.User userDTO = new com.userspostscomments.users.User();
+        userDTO.setId((int)user.getId());
+        userDTO.setUsername(user.getUsername());
+        userDTO.setEmail(user.getEmail());
+
+        response.setUser(userDTO);
 
 		return response;
 	}
