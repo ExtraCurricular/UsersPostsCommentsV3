@@ -10,7 +10,10 @@ import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+import org.springframework.ws.soap.saaj.SaajSoapMessage;
+import org.springframework.ws.soap.server.endpoint.annotation.SoapHeader;
 
+import javax.xml.ws.handler.MessageContext;
 import java.util.List;
 
 @Endpoint
@@ -57,7 +60,7 @@ public class UsersEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "createUserRequest")
     @ResponsePayload
-    public CreateUserResponse createUser(@RequestPayload CreateUserRequest request) {
+    public CreateUserResponse createUser(@RequestPayload CreateUserRequest request,  MessageContext messageContext) {
         CreateUserResponse response = new CreateUserResponse();
 
         if (request.getEmail() == null){

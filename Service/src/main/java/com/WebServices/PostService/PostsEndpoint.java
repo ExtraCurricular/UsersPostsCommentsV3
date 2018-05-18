@@ -89,10 +89,16 @@ public class PostsEndpoint {
 
         if (post.getWeatherId() != 0) {
             RestTemplate restTemplate = new RestTemplate();
-            ResponseEntity<Location> forecastResponse =
-                    restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations/" + post.getWeatherId(),
-                            HttpMethod.GET, null, new ParameterizedTypeReference<Location>() {
-                            });
+            ResponseEntity<Location> forecastResponse = null;
+            try{
+                forecastResponse =
+                        restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations/" + post.getWeatherId(),
+                                HttpMethod.GET, null, new ParameterizedTypeReference<Location>() {
+                                });
+            } catch (Exception ex){
+                throw new ServiceFaultException("ERROR", new ServiceFault("SERVER_ERROR", "The weather service did not respond"));
+            }
+
             if (forecastResponse.getStatusCode() == HttpStatus.OK) {
                 com.userspostscomments.posts.Post postNew = new com.userspostscomments.posts.Post();
                 postNew.setUserId((int)post.getUserId());
@@ -163,8 +169,15 @@ public class PostsEndpoint {
             }
 
             HttpEntity<String> WeatherRequest = new HttpEntity<>(json);
-            ResponseEntity<String> postResponse = restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations",
-                    HttpMethod.POST, WeatherRequest, String.class);
+
+            ResponseEntity<String> postResponse = null;
+
+            try{
+                postResponse = restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations",
+                        HttpMethod.POST, WeatherRequest, String.class);
+            } catch (Exception ex){
+                throw new ServiceFaultException("ERROR", new ServiceFault("SERVER_ERROR", "The weather service did not respond"));
+            }
 
             if (postResponse.getStatusCode() == HttpStatus.CREATED) {
                 HttpHeaders headers = postResponse.getHeaders();
@@ -251,8 +264,16 @@ public class PostsEndpoint {
             }
 
             HttpEntity<String> WeatherRequest = new HttpEntity<>(json);
-            ResponseEntity<String> postResponse = restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations",
-                    HttpMethod.POST, WeatherRequest, String.class);
+
+            ResponseEntity<String> postResponse = null;
+
+            try{
+                postResponse = restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations",
+                        HttpMethod.POST, WeatherRequest, String.class);
+            } catch (Exception ex){
+                throw new ServiceFaultException("ERROR", new ServiceFault("SERVER_ERROR", "The weather service did not respond"));
+            }
+
 
             if (postResponse.getStatusCode() == HttpStatus.CREATED) {
                 HttpHeaders headers = postResponse.getHeaders();
