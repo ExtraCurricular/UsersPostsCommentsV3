@@ -44,11 +44,17 @@ public class PostsEndpoint {
         RestTemplate restTemplate = new RestTemplate();
 
         for (Post post : posts) {
+            ResponseEntity<Location> forecastResponse = null;
             if (post.getWeatherId() != 0) {
-                ResponseEntity<Location> forecastResponse =
-                        restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations/" + post.getWeatherId(),
-                                HttpMethod.GET, null, new ParameterizedTypeReference<Location>() {
-                                });
+                try{
+                    forecastResponse =
+                            restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations/" + post.getWeatherId(),
+                                    HttpMethod.GET, null, new ParameterizedTypeReference<Location>() {
+                                    });
+                } catch (Exception ex){
+                    throw new ServiceFaultException("ERROR", new ServiceFault("SERVER_ERROR", "The weather service did not respond"));
+                }
+
                 if (forecastResponse.getStatusCode() == HttpStatus.OK) {
                     com.userspostscomments.posts.Post postNew = new com.userspostscomments.posts.Post();
                     postNew.setUserId((int)post.getUserId());
@@ -310,10 +316,16 @@ public class PostsEndpoint {
 
         if (post.getWeatherId() != 0) {
             RestTemplate restTemplate = new RestTemplate();
-            ResponseEntity<String> deleteResponse =
-                    restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations/" + post.getWeatherId(),
-                            HttpMethod.DELETE, null, new ParameterizedTypeReference<String>() {
-                            });
+            ResponseEntity<String> deleteResponse = null;
+            try{
+                deleteResponse =
+                        restTemplate.exchange("http://userspostscommentsv3_WeatherService_1:5000/locations/" + post.getWeatherId(),
+                                HttpMethod.DELETE, null, new ParameterizedTypeReference<String>() {
+                                });
+            } catch (Exception ex){
+                throw new ServiceFaultException("ERROR", new ServiceFault("SERVER_ERROR", "The weather service did not respond"));
+            }
+
             if(deleteResponse.getStatusCode() != HttpStatus.OK){
                 throw new ServiceFaultException("ERROR", new ServiceFault("SERVER_ERROR", "The weather service responded with error code"));
             }
