@@ -1,5 +1,7 @@
 ~~~~
 
+docker-compose up -d
+
 soap/users.wsdl
 soap/posts.wsdl
 soap/comments.wsdl
