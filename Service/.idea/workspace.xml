@@ -18,7 +18,7 @@
       <file leaf-file-name="WebServiceConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/WebServiceConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1218">
+            <state relative-caret-position="0">
               <caret line="74" column="49" lean-forward="false" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
               <folding />
             </state>
@@ -48,8 +48,28 @@
       <file leaf-file-name="PostsEndpoint.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/PostsEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6090">
-              <caret line="324" column="14" lean-forward="false" selection-start-line="324" selection-start-column="14" selection-end-line="324" selection-end-column="14" />
+            <state relative-caret-position="302">
+              <caret line="144" column="32" lean-forward="false" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/repositories/PostRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="posts.xsd" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/posts.xsd">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="101" lean-forward="true" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="101" />
               <folding />
             </state>
           </provider>
@@ -246,6 +266,17 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="WebServices" type="462c0819:PsiDirectoryNode" />
               <item name="PostService" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="WebServices" type="462c0819:PsiDirectoryNode" />
+              <item name="PostService" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Service" type="b2602c69:ProjectViewProjectNode" />
@@ -496,8 +527,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PostService/init.sql" />
-    <entry file="file://$PROJECT_DIR$/PostService/wait-for" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/models/IPost.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/repositories/Exception503.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/String.java">
@@ -682,13 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/posts.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1953">
-          <caret line="93" column="64" lean-forward="false" selection-start-line="93" selection-start-column="64" selection-end-line="93" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -747,7 +769,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/WebServiceConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1218">
+        <state relative-caret-position="0">
           <caret line="74" column="49" lean-forward="false" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
           <folding />
         </state>
@@ -793,10 +815,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/posts.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="101" lean-forward="true" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/repositories/PostRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/WebServices/PostService/PostsEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6090">
-          <caret line="324" column="14" lean-forward="false" selection-start-line="324" selection-start-column="14" selection-end-line="324" selection-end-column="14" />
+        <state relative-caret-position="302">
+          <caret line="144" column="32" lean-forward="false" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
           <folding />
         </state>
       </provider>

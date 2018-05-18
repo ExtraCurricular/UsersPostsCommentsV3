@@ -52,7 +52,14 @@ public class PostsEndpoint {
                                     HttpMethod.GET, null, new ParameterizedTypeReference<Location>() {
                                     });
                 } catch (Exception ex){
-                    throw new ServiceFaultException("ERROR", new ServiceFault("SERVER_ERROR", "The weather service did not respond"));
+                    com.userspostscomments.posts.Post postNew = new com.userspostscomments.posts.Post();
+                    postNew.setUserId((int)post.getUserId());
+                    postNew.setBody(post.getBody());
+                    postNew.setTitle(post.getTitle());
+                    postNew.setId((int)post.getId());
+                    postNew.setLocationId((int)post.getWeatherId());
+                    response.getPosts().add(postNew);
+                    continue;
                 }
 
                 if (forecastResponse.getStatusCode() == HttpStatus.OK) {
@@ -69,8 +76,6 @@ public class PostsEndpoint {
 
                     postNew.setLocation(weather);
                     response.getPosts().add(postNew);
-                } else {
-                    throw new ServiceFaultException("ERROR", new ServiceFault("SERVER_ERROR", "The weather service did not respond"));
                 }
             } else {
                 com.userspostscomments.posts.Post postNew = new com.userspostscomments.posts.Post();
@@ -102,7 +107,15 @@ public class PostsEndpoint {
                                 HttpMethod.GET, null, new ParameterizedTypeReference<Location>() {
                                 });
             } catch (Exception ex){
-                throw new ServiceFaultException("ERROR", new ServiceFault("SERVER_ERROR", "The weather service did not respond"));
+                com.userspostscomments.posts.Post postNew = new com.userspostscomments.posts.Post();
+                postNew.setUserId((int)post.getUserId());
+                postNew.setBody(post.getBody());
+                postNew.setTitle(post.getTitle());
+                postNew.setId((int)post.getId());
+                postNew.setLocationId((int)post.getWeatherId());
+                response.setPost(postNew);
+
+                return response;
             }
 
             if (forecastResponse.getStatusCode() == HttpStatus.OK) {
@@ -120,8 +133,16 @@ public class PostsEndpoint {
                 postNew.setLocation(weather);
                 response.setPost(postNew);
                 return response;
-            } else {
-                throw new ServiceFaultException("ERROR", new ServiceFault("SERVER_ERROR", "The weather service did not respond"));
+            } else{
+                com.userspostscomments.posts.Post postNew = new com.userspostscomments.posts.Post();
+                postNew.setUserId((int)post.getUserId());
+                postNew.setBody(post.getBody());
+                postNew.setTitle(post.getTitle());
+                postNew.setId((int)post.getId());
+                postNew.setLocationId((int)post.getWeatherId());
+                response.setPost(postNew);
+
+                return response;
             }
         } else {
 
